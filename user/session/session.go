@@ -16,10 +16,12 @@ func New() *Self {
 }
 
 var store = sessions.NewCookieStore([]byte(config.Cfg.Sessionkey))
+var AWSKEY = "2324@4"
+var AWSSECRET = "2384hjkdcbjkqwd6ghus7cxhuisx7as9dsaer7as78x7sx8asx9"
 
 func (self *Self) SetSession(w http.ResponseWriter, r *http.Request, data map[string]string) {
 	session, err := store.Get(r, "govwa")
-
+	
 	if err != nil {
 		log.Println(err.Error())
 	}
